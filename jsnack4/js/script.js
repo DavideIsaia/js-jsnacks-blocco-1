@@ -3,20 +3,28 @@
 // inserisco il numero
 let userNumber = parseInt(prompt("Inserisci un numero tra 1000 e 9999"));
 
-// lo stampo in console e in pagina
-console.log(userNumber);
-document.getElementById('user-number').innerHTML = `Il numero che hai inserito è ${userNumber}.`;
+// se il numero è di 4 cifre allora eseguo le seguenti operazioni
+if (userNumber >= 1000) {
 
-// imposto la somma uguale a 0 per evitare errore undefined
-let somma = 0;
+    // stampo il numero dell'utente in console e in pagina
+    console.log(userNumber);
+    document.getElementById('user-number').innerHTML = `Il numero che hai inserito è ${userNumber}.`;
 
-// prendo il numero inserito dall'utente e finchè dà il resto di 10, lo sommo
-while (userNumber) {
-    somma += userNumber % 10;
-    // prendo la parte intera della divisione del numero per 10
-    userNumber = Math.floor(userNumber / 10);
+    // imposto la somma uguale a 0 per evitare errore undefined
+    let somma = 0;
+
+    // prendo il numero inserito dall'utente e finchè dà il resto di 10, lo sommo
+    while (userNumber) {
+        somma += userNumber % 10;
+        // prendo la parte intera della divisione del numero per 10
+        userNumber = Math.floor(userNumber / 10);
+    }
+
+    // stampo la somma in console e in pagina
+    console.log(somma);
+    document.getElementById('message').innerHTML = `La somma delle sue cifre è pari a ${somma}.`;
+
+//altrimenti non eseguo nessuna operazione 
+} else {
+    alert("Numero inserito non valido");
 }
-
-// lo stampo in console e in pagina
-console.log(somma);
-document.getElementById('message').innerHTML = `La somma delle sue cifre è pari a ${somma}.`;
