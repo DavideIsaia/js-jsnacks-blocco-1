@@ -4,7 +4,7 @@
 let userNumber = parseInt(prompt("Inserisci un numero tra 1000 e 9999"));
 
 // se il numero è di 4 cifre allora eseguo le seguenti operazioni
-if (userNumber >= 1000) {
+if (userNumber >= 1000 && userNumber <= 9999) {
 
     // stampo il numero dell'utente in console e in pagina
     console.log(userNumber);
